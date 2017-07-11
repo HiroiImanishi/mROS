@@ -145,7 +145,7 @@ string test_requestResponse(){
     xml += "<value></value>\n";
     xml += "<value><array>\n";
     xml += "<data><value>TCPROS</value>\n";
-    xml += "<value>192.168.0.10</value>\n";
+    xml += "<value>192.168.11.2</value>\n";			//IPが変われば変える必要あり
     xml += "<value><i4>40400</i4></value>\n</data>";
     xml += "</array></value>\n";
     xml += "</data></array></value>";

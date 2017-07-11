@@ -18,11 +18,12 @@
 
 /*ネットワーク初期化
  *マスタに対する名前解決とかもかな？ */
+//DHCPを使わない時をどうすればいいのか
 #define USE_DHCP (1)
 #if(USE_DHCP == 0)
-	#define IP_ADDRESS  	("192.168.0.10")	/*IP address */
-	#define SUBNET_MASK		("255.0.0.0")	/*Subset mask */
-	#define DEFAULT_GATEWAY	("")	/*Default gateway */
+	#define IP_ADDRESS  	("192.168.11.10")	/*IP address */
+	#define SUBNET_MASK		("255.0.0.0")	/*Subnet mask */
+	#define DEFAULT_GATEWAY	("169.254.11.254")	/*Default gateway */
 #endif
 
 EthernetInterface network;
@@ -54,28 +55,25 @@ void network_init(){
 //マスタへのソケット
 TCPSocketConnection mas_sock;
 
-const char *m_ip = "192.168.0.15";	//ros master IP
+const char *m_ip = "192.168.11.5";	//ros master IP
 const int m_port = 11311;	//ros master xmlrpc port
 int n_port,tcp_port;
 
 
-void connect_master(){
-	if(mas_sock.connect(m_ip,m_port) == -1){
-		exit(1);
-	}
-}
 
 //マスタとのXML-RPC通信クライアント
 void xml2master(bool mode){
 	string xml;
+	syslog(LOG_NOTICE,"master IP:[%s]",m_ip);
 	if(mas_sock.connect(m_ip,m_port) == -1){
-			exit(1);
+		syslog(LOG_NOTICE,"※※※※※cannot nonnect master!※※※※※");
+		exit(1);
 		}
 	//テスト用にとりあえずサブスクライバの登録だけ mode = false -> サブスクライバ
 	if(!mode){
-		xml = registerPublisher("/mros_node","/mros_msg","std_msgs/String","http://192.168.10:40040");
+		xml = registerPublisher("/mros_node","/mros_msg","std_msgs/String","http://192.168.11.2:40040");
 	}else{
-		xml = registerSubscriber("/mros_node","/test_string","std_msgs/String","http://192.168.10");
+		xml = registerSubscriber("/mros_node","/test_string","std_msgs/String","http://192.168.11.2");
 	}
 	char *snd_buff;
 	snd_buff = (char *)malloc(1024*sizeof(char));
@@ -94,7 +92,7 @@ void xml2master(bool mode){
 	bool f = true;
 	while(f){
 	n = mas_sock.receive(rcv_buff,1024);
-	syslog(LOG_NOTICE,"LOGINFO : RECIEVING now..");
+	//syslog(LOG_NOTICE,"LOGINFO : RECIEVING now..");
 	tmp = rcv_buff;
 	if(tmp.find("OK") != -1){
 		f = !f;
@@ -166,6 +164,8 @@ static SoftPWM ledb(P6_15);                                     // LED-Blue
 void rostcp(){
 	//TCPROSを行ってデータを受信するところ
 //デモ用
+#ifndef rostcp2
+#define rostcp2
 	ledu = 0;
 	ledr.period_ms(10);
 	ledr = 0.0f;
@@ -184,10 +184,12 @@ void rostcp(){
 	if(n < 0){
 		exit(1);
 	}
+
 	char *rcv_buff;
 	char *rcv_p;
 	rcv_buff = (char *)malloc(1024*sizeof(char));
 	rcv_p = &rcv_buff[8]; //tcprosのヘッダの部分は避ける
+#endif
 	while(1){
 		n = tcpsock.receive(rcv_buff,256);
 		rcv_buff[0] = rcv_buff[0] + '0';
@@ -242,13 +244,6 @@ void rostcp(){
 
 //ETWEST用デモプログラム
 
-
-/***************************************************
- * @brief       Parameterの値をPC画面に出力
- * @param       Value : 画面に出力する値
- * @return      なし
- * @date 2014/12/14 新規作成
- **************************************************/
 //userタスク
 
 void main_task(){
@@ -256,7 +251,6 @@ void main_task(){
 	syslog(LOG_NOTICE, "LOG_INFO: network initialize...");
 	network_init();
 	syslog(LOG_NOTICE, "LOG_INFO: SUCCESS INITIALIZATION");
-	syslog(LOG_NOTICE, "-----please type operation-----");
 
 	char c;
 	bool loop = true;
@@ -302,11 +296,10 @@ void main_task(){
 void pub_task(){
 #ifndef _PUB_
 #define _PUB_
-	xml2master(PUBLISHER);
 	syslog(LOG_NOTICE, "========Activate mROS PUBLISHER========");
-#endif //_PUB_
-
+	xml2master(PUBLISHER);
 	node_server(40040); //xmlrpc受付
+#endif //_PUB_
 	node_server(40400);	//TCPの受付＆トピック出版
 }
 
@@ -315,8 +308,8 @@ void sub_task(){
 #define _SUB_
 	syslog(LOG_NOTICE, "========Activate mROS SUBSCRIBER========");
 	xml2master(SUBSCRIBER);
-#endif //_SUB_
 	request_topic();
+#endif //_SUB_
 	rostcp();
 
 }

@@ -6,22 +6,23 @@
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="Node" key="selection"/>
+		<item value="syslog" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="syslog"/>
+			<item value="192.168.10"/>
+			<item value="192.168.0.10"/>
 			<item value="Node"/>
 			<item value="Nodep"/>
 			<item value="mode"/>
-			<item value="syslog"/>
 			<item value="\x"/>
 			<item value="subsock"/>
-			<item value="strlen"/>
-			<item value="rec"/>
 		</list>
 		<list key="replacehistory">
+			<item value="169.254.9.266"/>
 			<item value="tcpsock"/>
 			<item value="sizeof"/>
 			<item value="rcv"/>

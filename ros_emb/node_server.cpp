@@ -38,6 +38,8 @@ void init(void){
 //パブリッシャー用TCPサーバ
 void nodeServerStart(TCPSocketServer svr,TCPSocketConnection csock,int port){
 	//xmlNode *node;
+#ifndef nodesvr
+#define nodesvr
 	if(svr.bind(port) == -1){
 		syslog(LOG_NOTICE,"Failed bind");
 		exit(1);
@@ -97,6 +99,7 @@ void nodeServerStart(TCPSocketServer svr,TCPSocketConnection csock,int port){
 				char *msg;
 				buf = (char *)malloc(256);
 				msg = (char *)malloc(256);
+#endif
 				init();
 				bool b = false;
 				bool bb = true;
