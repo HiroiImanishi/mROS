@@ -55,7 +55,7 @@ void network_init(){
 //マスタへのソケット
 TCPSocketConnection mas_sock;
 
-const char *m_ip = "192.168.11.5";	//ros master IP
+const char *m_ip = "192.168.0.15";	//ros master IP
 const int m_port = 11311;	//ros master xmlrpc port
 int n_port,tcp_port;
 
@@ -71,9 +71,9 @@ void xml2master(bool mode){
 		}
 	//テスト用にとりあえずサブスクライバの登録だけ mode = false -> サブスクライバ
 	if(!mode){
-		xml = registerPublisher("/mros_node","/mros_msg","std_msgs/String","http://192.168.11.2:40040");
+		xml = registerPublisher("/mros_node","/mros_msg","std_msgs/String","http://192.168.0.14:40040");
 	}else{
-		xml = registerSubscriber("/mros_node","/test_string","std_msgs/String","http://192.168.11.2");
+		xml = registerSubscriber("/mros_node","/test_string","std_msgs/String","http://192.168.0.14");
 	}
 	char *snd_buff;
 	snd_buff = (char *)malloc(1024*sizeof(char));
