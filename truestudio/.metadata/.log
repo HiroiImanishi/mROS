@@ -10473,3 +10473,103 @@ This warning can be switched off on the Team > Git > Confirmations and Warnings 
 
 !ENTRY org.eclipse.core.net 1 0 2017-08-01 13:25:07.782
 !MESSAGE System property http.proxyPort is not set but should be 8080.
+!SESSION 2017-08-01 13:32:18.847 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_121
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=ja_JP
+Command-line arguments:  -os win32 -ws win32 -arch x86
+
+!ENTRY com.atollic.truestudio.productmanager 1 0 2017-08-01 13:32:21.845
+!MESSAGE Loading product manager
+
+!ENTRY com.atollic.truestudio.productmanager 1 0 2017-08-01 13:32:21.856
+!MESSAGE OS info: Windows 10, 10.0, x86
+
+!ENTRY TrueSTUDIO 1 0 2017-08-01 13:32:22.518
+!MESSAGE Target: ARM, Version: 7.1.2, Build date: 20170322-1909, Installation dir: /C:/Program Files (x86)/Atollic/TrueSTUDIO for ARM 7.1.2/ide/
+
+!ENTRY TrueSTUDIO 1 0 2017-08-01 13:32:22.521
+!MESSAGE Workspace: C:\Users\mori\Dropbox\mROS\mROS\truestudio
+
+!ENTRY LicenseSystem 1 0 2017-08-01 13:32:22.526
+!MESSAGE Updated java.library.path to: C:;C:\Program Files (x86)\Atollic\TrueSTUDIO for ARM 7.1.2\ide;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:/Program Files (x86)/Atollic/TrueSTUDIO for ARM 7.1.2/ide/jre/bin/client;C:/Program Files (x86)/Atollic/TrueSTUDIO for ARM 7.1.2/ide/jre/bin;C:/Program Files (x86)/Atollic/TrueSTUDIO for ARM 7.1.2/ide/jre/lib/i386;C:\ProgramData\Oracle\Java\javapath;C:\Program Files\Common Files\Microsoft Shared\Windows Live;C:\Program Files (x86)\Common Files\Microsoft Shared\Windows Live;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files\Git\cmd;C:\Program Files\Git\mingw64\bin;C:\w32tex\bin;C:\Program Files (x86)\gs\gs9.18\bin;C:\Program Files (x86)\gs\gs9.18\lib;C:\Program Files (x86)\Windows Live\Shared;C:\Program Files (x86)\Microsoft VS Code\bin;C:\altera\15.0\modelsim_ase\win32aloem;C:\Users\mori\AppData\Local\Microsoft\WindowsApps;;C:\Program Files (x86)\Atollic\TrueSTUDIO for ARM 7.1.2;;.
+
+!ENTRY TrueSTUDIO License 1 0 2017-08-01 13:32:22.631
+!MESSAGE Valid local features found: 0
+
+!ENTRY TrueSTUDIO License 1 0 2017-08-01 13:32:22.633
+!MESSAGE Valid network features found: 0
+
+!ENTRY TrueSTUDIO License 1 0 2017-08-01 13:32:22.633
+!MESSAGE License system initialized in 71ms
+
+!ENTRY TrueSTUDIO 1 0 2017-08-01 13:32:22.647
+!MESSAGE License numbers: 0 []
+
+!ENTRY TrueSTUDIO 1 0 2017-08-01 13:32:22.649
+!MESSAGE This installation is running as LITE
+
+!ENTRY org.eclipse.jface 2 0 2017-08-01 13:32:23.585
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2017-08-01 13:32:23.586
+!MESSAGE A conflict occurred for ALT+CTRL+T:
+Binding(ALT+CTRL+T,
+	ParameterizedCommand(Command(org.eclipse.team.svn.ui.command.EditPropertiesCommand,Show Properties,
+		,
+		Category(org.eclipse.team.svn.ui.command.category,SVN,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@157413e,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(ALT+CTRL+T,
+	ParameterizedCommand(Command(org.eclipse.tm.terminal.connector.local.command.launch,Open Local Terminal on Selection,
+		,
+		Category(org.eclipse.tm.terminal.view.ui.commands.category,ターミナル・コマンド,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@45efdb,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+
+!ENTRY com.atollic.truestudio.integration.processorexpert 0 0 2017-08-01 13:32:25.870
+!MESSAGE Atollic TrueSTUDIO Processor Expert integration is up.
+
+!ENTRY edu.hawaii.ics.csdl.jupiter 1 0 2017-08-01 13:32:25.909
+!MESSAGE Code Review is up.
+
+!ENTRY org.eclipse.egit.ui 2 0 2017-08-01 13:32:25.949
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\mori'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.eclipse.core.net 1 0 2017-08-01 13:32:26.007
+!MESSAGE System property http.proxyHost is not set but should be www-cache.kuins.kyoto-u.ac.jp.
+
+!ENTRY org.eclipse.core.net 1 0 2017-08-01 13:32:26.008
+!MESSAGE System property http.proxyPort is not set but should be 8080.
+
+!ENTRY org.eclipse.core.net 1 0 2017-08-01 13:32:26.037
+!MESSAGE System property http.proxyHost is not set but should be www-cache.kuins.kyoto-u.ac.jp.
+
+!ENTRY org.eclipse.core.net 1 0 2017-08-01 13:32:26.037
+!MESSAGE System property http.proxyPort is not set but should be 8080.
+
+!ENTRY com.atollic.truestudio.mbs 4 0 2017-08-01 13:33:12.596
+!MESSAGE Failed to find device info
+
+!ENTRY com.atollic.truestudio.mbs 4 0 2017-08-01 13:33:12.603
+!MESSAGE Failed to find device info
+
+!ENTRY org.eclipse.cdt.core 1 0 2017-08-01 13:33:20.326
+!MESSAGE Indexed 'ros_emb' (5 sources, 131 headers) in 6.59 sec: 10,803 declarations; 19,897 references; 16 unresolved inclusions; 0 syntax errors; 129 unresolved names (0.42%)
+
+!ENTRY com.atollic.truestudio.mbs 4 0 2017-08-01 13:52:13.995
+!MESSAGE Failed to find device info
+
+!ENTRY com.atollic.truestudio.mbs 4 0 2017-08-01 13:52:13.997
+!MESSAGE Failed to find device info
+
+!ENTRY com.atollic.truestudio.productmanager 1 0 2017-08-01 16:22:16.528
+!MESSAGE Unloading product manager

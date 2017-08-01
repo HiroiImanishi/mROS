@@ -9,6 +9,7 @@
 		<item value="false" key="WizardProjectsImportPage.STORE_COPY_PROJECT_ID"/>
 		<item value="false" key="WizardProjectsImportPage.STORE_ARCHIVE_SELECTED"/>
 		<list key="WizardProjectsImportPage.STORE_DIRECTORIES">
+			<item value="C:\Users\mori\Dropbox\mROS\mROS\truestudio\ros_emb"/>
 			<item value="C:\Users\mori\Dropbox\mROS\mROS\truestudio"/>
 			<item value="C:\research\mROS\gitrepo\mROS\truestudio\ros_emb"/>
 		</list>

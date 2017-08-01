@@ -55,7 +55,7 @@ void network_init(){
 //マスタへのソケット
 TCPSocketConnection mas_sock;
 
-const char *m_ip = "192.168.0.15";	//ros master IP
+const char *m_ip = "192.168.11.4";	//ros master IP
 const int m_port = 11311;	//ros master xmlrpc port
 int n_port,tcp_port;
 
