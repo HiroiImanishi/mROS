@@ -67,3 +67,21 @@ Binding(ALT+CTRL+T,
 
 !ENTRY edu.hawaii.ics.csdl.jupiter 1 0 2018-09-13 23:55:09.065
 !MESSAGE Code Review is up.
+
+!ENTRY com.atollic.truestudio.mbs 2 0 2018-09-14 00:12:43.226
+!MESSAGE app needs property 'com.atollic.truestudio.general.runtimelib.1941917216' fixed. Fixing to 'com.atollic.truestudio.ld.general.cclib.CCSmallCSmall'.
+
+!ENTRY com.atollic.truestudio.mbs 4 0 2018-09-14 00:12:43.261
+!MESSAGE Failed to find device info
+
+!ENTRY com.atollic.truestudio.mbs 4 0 2018-09-14 00:12:43.262
+!MESSAGE Failed to find device info
+
+!ENTRY com.atollic.truestudio.mbs 4 0 2018-09-14 00:13:07.106
+!MESSAGE Failed to find device info
+
+!ENTRY com.atollic.truestudio.mbs 4 0 2018-09-14 00:13:07.106
+!MESSAGE Failed to find device info
+
+!ENTRY com.atollic.truestudio.productmanager 1 0 2018-09-14 00:47:16.121
+!MESSAGE Unloading product manager
